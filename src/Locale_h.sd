@@ -1,0 +1,47 @@
+##stringtype C
+##shortstrings
+/***************************************************************************
+ Bourriquet MorphOS
+ Copyright (C) 2022 digitally
+ 
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+***************************************************************************/
+#ifndef LOCALE_H
+#define LOCALE_H
+
+// flexcat string structure
+struct fcstr
+	{
+  		const char * const defmsg; // la chaîne du catalogue par défaut
+  		const char * msg;          // la chaîne traduite/convertie du catalogue
+  		const long id;             // identifiant chaîne du catalogue
+	};
+
+// fonctions catalogue init/open/close
+extern void InitCatalogue(void);
+extern BOOL OpenCatalogue(void);
+extern void CloseCatalogue(void);
+
+// define to retrieve the translated catalog string
+#define tr(fc)    ((fc)->msg)
+
+// ensemble des phrases de traduction du catalogue
+extern struct fcstr %b_Strings[%n];
+
+// MSG_XXXX pointantsur les phrases correspondantes
+#define %i (&%b_Strings[%e])
+
+#endif /* LOCALE_H */

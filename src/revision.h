@@ -1,0 +1,11 @@
+#define VERSIONSTRING "1.0"
+#define VERSION 1
+#define COMPILEREV 0
+#define COMPILEYEARNUM 2025
+#define COMPILEYEAR "2025"
+#define REVISION 0
+#define REVDATE "(21.02.2025)"
+#define VERTAG "1.0 (21.02.25)"
+#define LVERTAG "1.0 (21.02.2025)"
+
+#define VERHEXID 0x1000000

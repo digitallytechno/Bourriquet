@@ -1,0 +1,184 @@
+##stringtype C
+##shortstrings
+/***************************************************************************
+ Bourriquet MorphOS
+ Copyright (C) 2022 digitally
+ 
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+***************************************************************************/
+#include <proto/dos.h>
+#include <proto/exec.h>
+#include <proto/locale.h>
+#include <proto/codesets.h>
+
+#include "Locale.h"
+#include "Bourriquet.h"
+#include "Debug.h"
+
+struct fcstr %b_Strings[%n] =
+	{
+  		{ %s, NULL, %d }%(,)
+	};
+
+/*** fonctions du catalogue ***/
+/// InitCatalogue()
+void InitCatalogue(void)
+	{
+  		int i;
+  		struct fcstr *fc;
+
+  		ENTER();
+  		for(i=0, fc = (struct fcstr *)%b_Strings;  i < %n;  i++, fc++)
+  			{
+    			fc->msg = fc->defmsg;
+  			}
+ 	 	LEAVE();
+	}
+
+char *GetStr(APTR fcstr)
+	{
+		char *defaultstr = ((struct fcstr *)fcstr)->defmsg;
+
+		if(LocaleBase)
+			{
+				return (char *)GetCatalogStr(G->Catalog, ((struct fcstr *)fcstr)->id, (STRPTR)defaultstr);
+			}
+	  	return defaultstr;
+	}
+
+///
+/// OpenCatalogue()
+BOOL OpenCatalogue(void)
+	{
+  		BOOL retry = TRUE;
+  		BOOL expunged = FALSE;
+  		BOOL success = TRUE;
+  		struct fcstr *fc = NULL;
+  		int i = 0;
+
+  		ENTER();
+  		if(G->Locale != NULL && G->Catalog == NULL)
+  			{
+    			do
+    				{
+      					if(G->NoCatalogTranslation == FALSE)
+      						{
+        						G->Catalog = OpenCatalog(NULL,
+                                 							(STRPTR)"%b.catalog",
+                                 							OC_BuiltInLanguage, "english",
+                                 							OC_BuiltInCodeSet, 4, // 4 = iso-8859-1
+                                							TAG_END);
+      						}
+      					if(G->Catalog != NULL)
+      						{
+        						if(G->Catalog->cat_Version != 1)
+        							{
+          								W(DBF_STARTUP, "La version (%%%d) du catalogue est différente de la version (%v) requise", G->Catalog->cat_Version);
+          								CloseCatalog(G->Catalog);
+          								G->Catalog = NULL;
+								        if(expunged == FALSE)
+          									{
+            									RemLibrary((struct Library *)LocaleBase);
+            									//D(DBF_STARTUP, "expunged locale.library");
+            									expunged = TRUE;
+            									retry = TRUE;
+          									}
+          								else
+          									{
+            									struct EasyStruct es;
+
+            									DisplayBeep(NULL);
+            									es.es_StructSize = sizeof(es);
+            									es.es_Flags      = 0;
+									            es.es_Title        = (STRPTR)"Version de %b.catalog incompatible!";
+            									es.es_TextFormat   = (STRPTR)"Kitty a trouvé un fichier catalogue de traduction dans votre langue\\n"
+                                                                                  		"Il ne peut pas être activé car cette version est trop vieille\\n"
+																						"avec la version nécessaire de Kitty\\n";
+            									es.es_GadgetFormat = (STRPTR)"Retry|Continue|Quit";
+									            switch(EasyRequestArgs(NULL, &es, NULL, NULL))
+            										{
+              											default:
+              												case 0: 
+                												retry = FALSE;
+                												success = FALSE;
+              													break;
+											              case 1: 
+                												retry = TRUE;
+                												expunged = FALSE;
+              													break;
+											              case 2: // continue
+                												retry = FALSE;
+                												success = TRUE;
+              													break;
+            										}
+          									}
+        							}
+        						else
+        							{
+          								D(DBF_STARTUP, "%b.catalog v%%%d.%%%d (language: '%%%s', codeset: %%%d) ouvert avec succés", G->Catalog->cat_Version, G->Catalog->cat_Revision, G->Catalog->cat_Language, G->Catalog->cat_CodeSet);
+          								retry = FALSE;
+          								success = TRUE;
+        							}
+      						}
+      					else if(G->NoCatalogTranslation == FALSE)
+      						{
+        						if(IoErr() != 0) W(DBF_STARTUP, "Kitty ne peut pas ouvrir '%b.catalog': IoErr: %%%d", IoErr());
+        						else W(DBF_STARTUP, "Kitty ne pourra pas ouvrir '%b.catalog': les phrases prédéfinies seront utilisées à la place");
+						        retry = FALSE;
+      						}
+    				}
+    			while(retry == TRUE);
+  			}
+  		else W(DBF_STARTUP, "La locale.library n'était pas ouverte ou le catalogue est déjà ouvert.");
+  		if(G->Locale != NULL && G->Catalog != NULL)
+  			{
+    			for(i=0, fc = (struct fcstr *)%b_Strings;  i < %n;  i++, fc++)
+    				{
+      					const char *cs;
+
+      					cs = GetCatalogStr(G->Catalog, fc->id, (STRPTR)fc->defmsg);
+      					fc->msg = CodesetsUTF8ToStr(CSA_Source, cs, TAG_DONE);
+    				}
+  			}
+  		RETURN(success);
+  		return success;
+	}
+
+///
+/// CloseCatalogue()
+void CloseCatalogue(void)
+	{
+  		int i;
+  		struct fcstr *fc;
+
+  		ENTER();
+  		for(i=0, fc = (struct fcstr *)%b_Strings;  i < %n;  i++, fc++)
+  			{
+    			if(fc->msg != NULL && fc->msg != fc->defmsg)
+    				{
+      					CodesetsFreeA((STRPTR)fc->msg, NULL);
+      					fc->msg = fc->defmsg;
+   		 			}
+  			}
+  		if(G->Locale != NULL && G->Catalog != NULL)
+  			{
+    			CloseCatalog(G->Catalog);
+    			G->Catalog = NULL;
+ 	 		}
+  		LEAVE();
+	}
+
+///
