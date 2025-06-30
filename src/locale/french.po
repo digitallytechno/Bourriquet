@@ -1,0 +1,377 @@
+# Kitty catalog description/translation file (PO-style)
+# $Id$
+# $URL$
+# version 1.0
+#Translators:
+# digitallytechno@gmail.com, 2022
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Kitty\n"
+"Report-Msgid-Bugs-To: http://\n"
+"POT-Creation-Date: 2022-08-03 17:13:00+0100\n"
+"PO-Revision-Date: 2022-08-14 18:05:00+0000\n"
+"Last-Translator: digitally <digitallytechno@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Catalog-Name: Kitty\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgctxt "MSG_MA_PROJECT (0//)"
+msgid "Project"
+msgstr "Projet"
+
+msgctxt "MSG_MA_ABOUT (1//)"
+msgid "About Kitty..."
+msgstr "Au sujet de Kitty..."
+
+msgctxt "MSG_MA_ABOUT_MUI (2//)"
+msgid "About MUI..."
+msgstr "Au sujet de MUI..."
+
+msgctxt "MSG_PROJECT_ABOUT (3//)"
+msgid "About Kitty..."
+msgstr "Au sujet de Kitty..."
+
+msgctxt "MSG_SETTINGS_MUI (4//)"
+msgid "M\000MUI..."
+msgstr "M\000MUI..."
+
+msgctxt "MSG_HIDE (5//)"
+msgid "Hide"
+msgstr "Cacher"
+
+msgctxt "MSG_QUIT (6//)"
+msgid "Quit"
+msgstr "Quitter"
+
+msgctxt "MSG_COPYRIGHT1 (7//)"
+msgid "\nKitty \n (Emule for MorphOS)\nCopyright  2022 digitally\n"
+msgstr "\nKitty \n (Emule pour MorphOS)\nCopyright  2022 digitally\n"
+
+msgctxt "MSG_VERSION (8//)"
+msgid "Version Kitty"
+msgstr "Version Kitty"
+
+msgctxt "MSG_COMPILATION_DATE (9//)"
+msgid "Compilation date :"
+msgstr "Date de compilation :"
+
+msgctxt "MSG_COPYRIGHT2 (10//)"
+msgid "This program is free software\n"
+msgstr "Ce programme est un logiciel gratuit\n"
+
+msgctxt "MSG_USED_SOFTWARE (11//)"
+msgid "This program is free software\n"
+msgstr "Cette application utilise les logiciels tierces suivants :\n"
+
+msgctxt "MSG_APPLICATION_DESCRIPTION (12//)"
+msgid "Emule for MorphOS"
+msgstr "Emule pour MorphOS"
+
+msgctxt "MSG_OK (13//)"
+msgid "Ok"
+msgstr "Ok"
+
+msgctxt "MSG_CANCEL (14//)"
+msgid "_Cancel"
+msgstr "_Annuler"
+
+msgctxt "MSG_YES (15//)"
+msgid "_Yes"
+msgstr "_Oui"
+
+msgctxt "MSG_NO (16//)"
+msgid "_No"
+msgstr "_Non"
+
+msgctxt "MSG_CREATING_GUI (17//)"
+msgid "Creating user interface..."
+msgstr "Creation de l'interface utilisateur..."
+
+msgctxt "MSG_INIT_LIBS (18//)"
+msgid "Initialising libraries..."
+msgstr "Initialisation des bibliotheques..."
+
+msgctxt "MSG_INIT_TIMER (19//)"
+msgid "Initialize timer"
+msgstr "Initialisation de la minuterie"
+
+msgctxt "MSG_LOADING_GFX (20//)"
+msgid "Loading graphics..."
+msgstr "Chargement des graphismes..."
+
+msgctxt "MSG_NO_MCC (21//)"
+msgid "Couldn't open MUI custom class '%s' V%lu.%lu.\nThe class is not installed."
+msgstr "Kitty ne pourra pas ouvrir la classe MUI personnalisee '%s' V%lu.%lu.\n Cette classe n'est pas installee."
+
+msgctxt "MSG_MCC_OLD (22//)"
+msgid "Couldn't open MUI custom class '%s' V%lu.%lu.\n\nCurrently installed is V%lu.%lu, please upgrade!"
+msgstr "Kitty ne pourra pas ouvrir la classe MUI personnalisee '%s' V%lu.%lu. La version courante est la V%lu.%lu, veuillez l'upgrader !"
+
+msgctxt "MSG_MCC_IN_USE (23//)"
+msgid "Couldn't open MUI custom class '%s' V%lu.%lu.\n\nCurrently installed is V%lu.%lu, please upgrade!"
+msgstr "Kitty ne pourra pas ouvrir la classe MUI personnalisee '%s' V%lu.%lu. La version courante est la V%lu.%lu, veuillez l'upgrader !"
+
+msgctxt "MSG_RETRY_QUIT_GAD (24//)"
+msgid "Try again|Quit"
+msgstr "Essayer encore|Quitter"
+
+msgctxt "MSG_OPENING_GUI (25//)"
+msgid "Opening user interface..."
+msgstr "Ouverture de l'interface utilisateur..."
+
+msgctxt "MSG_QuitANGReq (26//)"
+msgid "Do you really want to quit Kitty ?"
+msgstr "Voulez vous reellement quitter Kitty ?"
+ 
+msgctxt "MSG_CONFIRM_REQ (27//)"
+msgid "Confirmation request"
+msgstr "Requete de confirmation"
+
+msgctxt "MSG_YES_NO_REQ (28//)"
+msgid "*_Yes|_No"
+msgstr "*_Oui|_Non"
+
+msgctxt "MSG_WINDOW_TITLE (29//)"
+msgid "Kitty" 
+msgstr "Kitty" 
+
+msgctxt "MSG_BT_QUIT (30//)"
+msgid "Quit"
+msgstr "Quitter"
+
+msgctxt "MSG_ERROR_STARTUP (31//)"
+msgid "Error during startup"
+msgstr "Erreur pendant le demarrage"
+
+msgctxt "MSG_ERROR_LIB (32//)"
+msgid "Can't open '%s', version v%lu.%lu"
+msgstr "Kitty ne peut pas ouvrir '%s' V%lu.%lu"
+
+msgctxt "MSG_ERROR_MUI_APPLICATION (33//)"
+msgid "Kitty can't create a application"
+msgstr "Kitty ne peut pas creer l'application"
+
+msgctxt "MSG_ERROR_CLASSES (34//)"
+msgid "Kitty can't create MUI custom classes"
+msgstr "Kitty ne peut pas creer les classes MUI personnalisees"
+
+msgctxt "MSG_ERROR_TIMER (35//)"
+msgid "Kitty can't init timer"
+msgstr "Kitty ne peut pas initialiser la minuterie"
+
+msgctxt "MSG_ERROR_TASK (36//)"
+msgid "Kitty can't init task"
+msgstr "Kitty ne peut pas initialiser les taches"
+
+msgctxt "MSG_ERROR_SIGNAL (37//)"
+msgid "Kitty can't init signal"
+msgstr "Kitty ne peut pas initialiser les signaux"
+
+msgctxt "MSG_ERROR_METHODSTASK (38//)"
+msgid "Kitty can't init methodtask"
+msgstr "Kitty ne peut pas initialiser la methodtask"
+
+msgctxt "MSG_ERROR_THREADS (39//)"
+msgid "Kitty can't init threads"
+msgstr "Kitty ne peut pas initialiser les threads"
+
+msgctxt "MSG_ERROR_LIB_URL (40//)"
+msgid "Kitty can't find url lib '%s', V%lu.%lu '%s'"
+msgstr "Kitty ne peut pas trouver les bibliotheques '%s' V%lu.%lu '%s'"
+
+msgctxt "MSG_ERROR_CREATE_SEMAPHORE (41//)"
+msgid "Kitty can't create semaphore"
+msgstr "Kitty ne peut pas creer de semaphore"
+
+msgctxt "MSG_RETRY_HOMEPAGE_QUIT_GAD (42//)"
+msgid "Quit home page"
+msgstr "Quitter la page d'acceuil"
+
+msgctxt "MSG_ABOUT_CURRENT_DEVELOPERS (43//)"
+msgid "Current Developers:"
+msgstr "Developpeurs suivants:"
+
+msgctxt "MSG_ABOUT_CONTRIBUTORS (44//)"
+msgid "Contributors:"
+msgstr "Contributeurs:"
+
+msgctxt "MSG_ABOUT_LOCALIZATION_CONTRIBUTORS (45//)"
+msgid "Localization Contributors:"
+msgstr "Contributeurs par pays:"
+
+msgctxt "MSG_ABOUT_GPL (46//)"
+msgid "This program is free software; you're welcome to\ndistribute and or modify it under the terms of the\nGNU Public License. See the enclosed documents for\nmore details."
+msgstr "Ce programme est un logiciel libre;\nVous etes le bienvenu(e) pour le distribuer ou le modifier sous les termes de la\n licence publique GNU. Voir les documents pour\n plus de details."
+
+msgctxt "MSG_ABOUT_3RD_PARTY_SOFTWARE (47//)"
+msgid "This program uses the following third party software:"
+msgstr "Ce programme utilise les logiciels tiers suivants:"
+
+msgctxt "MSG_ABOUT_KITTY_NEWS (48//)"
+msgid "The latest news about Kitty can be found at the\nKitty Support Site at \\0335http:///\\033n"
+msgstr "Les dernieres nouveautes concernant Kitty peuvent etre trouvees sur le \n Support du site de Kitty \\0335http:///\033n"
+
+msgctxt "MSG_ABOUTKITTY (49//)"
+msgid "About Kitty"
+msgstr "Au sujet de Kitty"
+
+msgctxt "MSG_SHUTDOWN (50//)"
+msgid "Shutting down Kitty..."
+msgstr "Fermeture de Kitty..."
+
+msgctxt "MSG_DB_CONNECT (51//)"
+msgid "Connect"
+msgstr "Connexion"
+
+msgctxt "MSG_DB_DISCONNECT (52//)"
+msgid "Disconnect"
+msgstr "Deconnexion"
+
+msgctxt "MSG_DB_SERVER (53//)"
+msgid "Server"
+msgstr "Serveur"
+
+msgctxt "MSG_DB_TRANSFER (54//)"
+msgid "Transfer"
+msgstr "Transfert"
+
+msgctxt "MSG_DB_RESEARCH (55//)"
+msgid "Research"
+msgstr "Recherche"
+
+msgctxt "MSG_DB_SHARED (56//)"
+msgid "Shared"
+msgstr "Partage"
+
+msgctxt "MSG_DB_PREFS (57//)"
+msgid "Preferences"
+msgstr "Preferences"
+
+msgctxt "MSG_SE_TITLE (58//)"
+msgid "Server List"
+msgstr "Liste des serveurs"
+
+msgctxt "MSG_SE_SUMMARY (59//)"
+msgid "Our gateway to the Edonkey network"
+msgstr "Notre porte d'entree sur le reseau Edonkey"
+
+msgctxt "MSG_SE_SERVERLIST (60//)"
+msgid "Server List"
+msgstr "Liste des serveurs"
+
+msgctxt "MSG_SE_NEWSERVER (61//)"
+msgid "New server" 
+msgstr "Nouveau serveur" 
+
+msgctxt "MSG_SE_NEWSERVER_IP (62//)"
+msgid "IP"
+msgstr "IP"
+
+msgctxt "MSG_SE_NEWSERVER_PORT (63//)"
+msgid "Port"
+msgstr "Port"
+
+msgctxt "MSG_SE_NEWSERVER_NAME (64//)"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "MSG_SE_NEWSERVER_ADD (65//)"
+msgid "Add server" 
+msgstr "Ajouter serveur" 
+
+msgctxt "MSG_SE_UPDATE_MET(66//)"
+msgid "Update server.met since URL"
+msgstr "Actualiser server.met depuis l'URL"
+
+msgctxt "MSG_SE_UPDATE (67//)"
+msgid "Update" 
+msgstr "Actualiser" 
+
+msgctxt "MSG_SE_MYINFOS (68//)"
+msgid "My infos"
+msgstr "Mes Infos"
+
+msgctxt "MSG_SE_NAME (69//)"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "MSG_SE_IP (70//)"
+msgid "IP"
+msgstr "IP"
+
+msgctxt "MSG_SE_DESCRIPTION (71//)"
+msgid "Description"
+msgstr "Description"
+
+msgctxt "MSG_SE_PING (72//)"
+msgid "Ping"
+msgstr "Ping"
+
+msgctxt "MSG_SE_USERS (73//)"
+msgid "Users"
+msgstr "Utilisateurs"
+
+msgctxt "MSG_SE_MAXUSERS (74//)"
+msgid "Max Users"
+msgstr "Max Utilisateurs"
+
+msgctxt "MSG_SE_FILES (75//)"
+msgid "Files"
+msgstr "Fichiers"
+
+msgctxt "MSG_SE_PREFS (76//)"
+msgid "Prefs"
+msgstr "Prefs"
+
+msgctxt "MSG_SE_FAILED (77//)"
+msgid "Failed"
+msgstr "Echec"
+
+msgctxt "MSG_SE_STATIC (78//)"
+msgid "Static"
+msgstr "Statique"
+
+msgctxt "MSG_SE_SOFTFILES (79//)"
+msgid "SoftFiles"
+msgstr "Limite faible de fichiers"
+
+msgctxt "MSG_SE_HARDFILES (80//)"
+msgid "HardFiles"
+msgstr "Limite Haute de fichiers"
+
+msgctxt "MSG_SE_VERSION (81//)"
+msgid "Version"
+msgstr "Version"
+
+msgctxt "MSG_SE_LOWIDUSERS (82//)"
+msgid "LowID"
+msgstr "LowID"
+
+msgctxt "MSG_SE_INFOS (83//)"
+msgid "Server infos"
+msgstr "Infos du serveur"
+
+msgctxt "MSG_SE_LOG (84//)"
+msgid "Log"
+msgstr "Journal"
+
+msgctxt "MSG_SE_LOWPRI (85//)"
+msgid "Low"
+msgstr "Basse"
+
+msgctxt "MSG_SE_NORMALPRI (86//)"
+msgid "Normal"
+msgstr "Normale"
+
+msgctxt "MSG_SE_HIGHPRI (87//)"
+msgid "High"
+msgstr "Haute"
+
+msgctxt "MSG_UNKNOWN_SIZE (88//)"
+msgid "unknown"
+msgstr "inconnu"
